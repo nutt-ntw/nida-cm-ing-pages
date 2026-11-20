@@ -1,0 +1,287 @@
+/* The moment before a working life begins. */
+.role-reveal-screen { min-height: 100svh; }
+.role-reveal-screen > #app > .site-header,
+.role-reveal-screen > #app > .site-footer { display: none; }
+.role-reveal-shell { min-height: calc(100svh - 82px); display: flex; flex-direction: column; padding: 0 36px; max-width: 1600px; margin: auto; }
+.role-reveal-top { display: flex; justify-content: space-between; align-items: center; gap: 24px; color: var(--subtle); font-family: var(--mono); font-size: 11px; max-width: 1280px; margin: auto; padding: 22px 28px; }
+.role-reveal-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 54px 0 70px; }
+.role-reveal-stage .eyebrow { font-family: var(--body); font-size: 13px; font-weight: 500; letter-spacing: 1.8px; color: var(--muted); }
+.role-reveal-overline { color: var(--subtle); font-size: 15px; font-weight: 500; letter-spacing: 1px; }
+.role-reveal-note { color: var(--subtle); font-size: 12px; line-height: 1.9; }
+.role-reveal-name { font-family: var(--serif); font-size: clamp(64px, 10vw, 150px); font-weight: 600; letter-spacing: -.055em; line-height: 1.09; max-width: 13ch; text-wrap: balance; margin: 30px auto 24px; color: var(--heading); }
+.role-reveal-status { color: var(--muted); font-family: var(--mono); font-size: 13px; line-height: 1.9; min-height: 50px; max-width: 560px; margin: 0 auto; }
+.role-reveal-actions { display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 32px; }
+.role-reveal-actions .btn { min-width: 220px; }
+.role-reveal-actions .btn.ghost { min-width: 0; border: 1px solid var(--line); min-height: 44px; font-size: 12px; }
+.role-reveal-actions [hidden] { display: none !important; }
+.role-reveal-shell .life-portrait { width: 78px; height: 78px; margin: 20px auto 0; }
+
+/* A personal decision, with selection kept separate from committing it. */
+.player-experience .life-stage .event-header { background: transparent; border: 0; padding: 0 0 20px; margin-bottom: 0; }
+.player-experience .life-stage .event-title { font-size: clamp(25px, 2.5vw, 34px); font-family: var(--thai-serif); line-height: 1.65; text-wrap: balance; font-weight: 400; }
+.player-experience .life-stage .event-scene { font-size: 16px; line-height: 2; color: var(--muted); }
+.player-experience .life-stage .choices { gap: 10px; }
+.player-experience .life-stage .choice { display: grid; padding: 19px 20px; grid-template-columns: minmax(0, 1fr) 22px; gap: 14px; border-radius: 4px; }
+.player-experience .life-stage .choice-title { font-size: 16px; font-weight: 500; line-height: 1.8; }
+.player-experience .life-stage .choice-tradeoff { font-size: 13px; line-height: 1.9; margin-top: 6px; color: var(--muted); }
+.player-experience .life-stage .choice.is-selected { border-color:var(--accent-text); box-shadow: inset 3px 0 var(--accent); background: #ff62000a; }
+.player-experience .life-stage .choice-arrow { font-family: var(--body); font-size: 18px; color: var(--subtle); align-self: center; }
+.player-experience .life-stage .choice[aria-pressed=true] .choice-arrow { color:var(--accent-text); }
+.player-experience .decision-confirm { padding-top: 22px; }
+.player-experience .decision-selection { color: var(--muted); font-size: 13px; }
+
+@media (max-width: 760px) {
+  .role-reveal-shell { padding: 0 22px; }
+  .role-reveal-top { font-size: 9px; gap: 12px; padding: 18px 22px; }
+  .role-reveal-top .eyebrow { display: none; }
+  .role-reveal-stage { padding: 48px 0; }
+  .role-reveal-stage .eyebrow { font-size: 11px; }
+  .role-reveal-name { font-size: clamp(56px, 13vw, 94px); letter-spacing: -.055em; margin: 26px auto; }
+  .role-reveal-status { font-size: 11px; max-width: 300px; }
+  .role-reveal-actions { flex-direction: column; gap: 12px; width: 100%; }
+  .role-reveal-actions .btn { width: 100%; max-width: 300px; }
+  .player-experience .life-stage .event-title { font-size: 26px; }
+  .player-experience .life-stage .event-scene { font-size: 15px; }
+  .player-experience .life-stage .choice { padding: 17px; gap: 11px; }
+  .player-experience .life-stage .choice-title { font-size: 15px; }
+  .player-experience .life-stage .choice-tradeoff { font-size: 13px; }
+}
+@media (max-width: 380px) {
+  .role-reveal-shell { padding: 18px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .role-reveal-shell *, .registration-card { animation: none !important; transition: none !important; }
+}
+
+/* Character profile: the participant's counterpart to the presenter control room. */
+.registration-page {max-width:1240px;margin:0 auto;padding:26px 28px 54px;}
+.registration-page-heading {display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px;}
+.registration-page-heading>.eyebrow,.registration-page .eyebrow {font-size:9px;letter-spacing:1.4px;line-height:1.5;color:var(--accent-text);}
+.registration-page-heading>div>p:last-child {font-size:13px;color:var(--muted);margin-top:5px;}
+.registration-steps {display:flex;align-items:center;gap:10px;color:var(--subtle);font:12px var(--mono);white-space:nowrap;}
+.registration-steps>span {display:flex;align-items:center;gap:6px;}
+.registration-steps small {font:11px var(--body);}
+.registration-steps>i {width:24px;height:1px;background:var(--line);}
+.registration-steps [aria-current] {color:var(--accent-text);}
+.registration-steps .is-done {color:var(--muted);}
+.registration-card {position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel);isolation:isolate;box-shadow:0 16px 48px color-mix(in srgb,var(--bg) 45%,transparent);}
+.registration-card::before {content:none;}
+.registration-banner {display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--line);background:linear-gradient(110deg,var(--raised),var(--panel));color:var(--paper);}
+.registration-brand-mark {display:grid;place-items:center;width:38px;height:42px;border-radius:9px;background:var(--accent);color:var(--button-ink);font:500 26px var(--mono);flex:none;}
+.registration-kicker {font:8px var(--mono);letter-spacing:1.5px;color:var(--subtle);margin-bottom:4px;}
+.registration-document-title {font:500 19px var(--body);line-height:1.3;letter-spacing:-.4px;}
+.registration-record {font:11px var(--mono);color:var(--muted);text-align:right;margin-left:auto;white-space:nowrap;}
+.registration-record small {display:block;font:9px var(--body);margin-top:4px;color:var(--subtle);}
+.registration-layout {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);}
+.registration-profile {position:relative;min-width:0;display:flex;flex-direction:column;padding:26px;background:radial-gradient(ellipse at 10% 0%,var(--brand-tint),transparent 65%),linear-gradient(150deg,var(--panel),var(--bg));border-right:1px solid var(--line);}
+.registration-profile-top {display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:25px;}
+.registration-profile-label {font-size:11px;color:var(--accent-text);display:flex;align-items:center;gap:7px;}
+.registration-profile-label i {width:5px;height:5px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px var(--brand-tint);}
+.registration-room {font:9px var(--mono);letter-spacing:.8px;color:var(--subtle);padding:6px 8px;border:1px solid var(--line);border-radius:5px;}
+.registration-identity {display:flex;align-items:center;gap:22px;margin-bottom:24px;}
+.registration-identity>div:last-child {min-width:0;}
+.registration-identity .eyebrow {font-size:7px;letter-spacing:1px;}
+.registration-portrait-frame {position:relative;padding:9px;flex:none;width:128px;height:144px;}
+.registration-portrait-frame::before {content:'';position:absolute;inset:0 0 16px;border:1px dashed var(--brand-line);border-radius:50%;animation:profile-orbit 80s linear infinite;}
+.registration-portrait.life-portrait {width:110px;height:110px;border:1px solid var(--brand-line);border-radius:50%;box-shadow:0 0 30px var(--brand-tint);}
+.registration-portrait-index {position:absolute;left:50%;bottom:0;transform:translateX(-50%);font:9px var(--mono);white-space:nowrap;letter-spacing:2px;color:var(--accent-text);}
+.registration-name {font:600 clamp(45px,4.7vw,64px)/1.2 var(--serif);letter-spacing:-2px;color:var(--heading);margin:8px 0 10px;overflow-wrap:anywhere;}
+.registration-role {font-size:14px;line-height:1.5;font-weight:500;color:var(--accent-text);}
+.registration-intro {font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 26px;}
+.registration-facts {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 24px;padding:0;border:0;}
+.registration-facts>div {min-width:0;padding:13px 10px;border:1px solid var(--line);border-radius:9px;background:color-mix(in srgb,var(--raised) 45%,transparent);}
+.registration-facts dt {font-size:10px;color:var(--subtle);margin-bottom:6px;}
+.registration-facts dd {font-size:14px;line-height:1.6;font-weight:500;color:var(--paper);margin:0;overflow-wrap:anywhere;}
+.registration-player {display:flex;align-items:center;gap:10px;padding-top:20px;margin-top:auto;border-top:1px solid var(--line);}
+.registration-player-avatar {display:grid;place-items:center;width:33px;height:33px;flex:none;background:var(--brand-tint);color:var(--accent-text);border:1px solid var(--brand-line);border-radius:8px;font-size:16px;}
+.registration-player>div {min-width:0;}
+.registration-player small {display:block;font-size:9px;color:var(--subtle);margin-bottom:2px;}
+.registration-player strong {display:block;font-size:13px;font-weight:500;overflow-wrap:anywhere;}
+.registration-player>span:last-child {margin-left:auto;white-space:nowrap;font-size:9px;color:var(--subtle);}
+.registration-detail-panel {padding:26px;min-width:0;display:flex;flex-direction:column;gap:20px;}
+.registration-section {margin:0;}
+.registration-section-heading h2 {font:500 23px/1.5 var(--body);letter-spacing:-.3px;color:var(--heading);margin:5px 0 7px;}
+.registration-section-heading>p:last-child {font-size:12px;line-height:1.85;color:var(--muted);}
+.registration-stats {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;}
+.registration-stat {min-width:0;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,var(--raised),var(--panel));}
+.registration-stat-heading {display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.registration-stat-heading h3 {font-size:11px;font-weight:500;color:var(--muted);}
+.registration-stat-heading>span {font:8px var(--mono);color:var(--subtle);}
+.registration-stat-value {display:flex;align-items:baseline;gap:6px;margin:5px 0 10px;}
+.registration-stat-value strong {font:500 29px/1.3 var(--mono);color:var(--paper);letter-spacing:-1px;}
+.registration-stat-value>span {font:9px var(--mono);color:var(--subtle);}
+.registration-track {display:block;position:relative;width:100%;height:5px;background:var(--line);border-radius:4px;}
+.registration-track>i {display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-light));transform-origin:left center;}
+.registration-track>b {position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--paper);border-radius:1px;}
+.registration-stat>p {font-size:9px;line-height:1.5;color:var(--subtle);margin-top:8px;}
+.registration-stat>p>span {font-family:var(--mono);color:var(--muted);margin-left:3px;}
+.registration-stat-note {font-size:10px;line-height:1.7;color:var(--subtle);margin-top:12px;}
+.registration-stat-note>span {display:inline-block;width:2px;height:9px;background:var(--paper);margin-right:6px;}
+.registration-traits {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.registration-traits article {padding:13px 15px;border:1px solid var(--line);border-left:2px solid var(--brand-line);border-radius:0 8px 8px 0;background:var(--brand-tint);}
+.registration-traits .eyebrow {font-size:7px;}
+.registration-traits h3 {font-size:12px;font-weight:500;margin:5px 0;color:var(--paper);}
+.registration-traits article>p:last-child {font-size:12px;line-height:1.75;color:var(--muted);}
+.registration-footer {display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:auto;padding-top:17px;border-top:1px solid var(--line);}
+.registration-footer>div {min-width:0;}
+.registration-footer .registration-ready-title {font-size:12px;color:var(--paper);font-weight:500;}
+.registration-footer p {font-size:10px;line-height:1.8;color:var(--subtle);}
+.registration-footer .btn {flex:none;min-height:48px;border-radius:9px;padding:10px 18px;font-size:13px;gap:15px;}
+.registration-detail-panel .form-message {margin:0;}
+.registration-simulation-note {display:flex;align-items:center;gap:18px;padding:13px 24px;border-top:1px solid var(--line);background:var(--bg);color:var(--subtle);}
+.registration-simulation-note>span {flex:none;font:8px var(--mono);letter-spacing:1px;}
+.registration-simulation-note>p {font-size:10px;line-height:1.8;}
+.registration-world {display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px;}
+.registration-world-card {min-width:0;padding:24px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--panel) 75%,transparent);}
+.registration-world-card .registration-section-heading h2 {font-size:20px;}
+.registration-world-card .eyebrow {font-size:8px;}
+.registration-network {position:relative;height:280px;margin-top:22px;}
+.registration-network svg {position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.registration-network path {stroke:var(--line);vector-effect:non-scaling-stroke;stroke-width:1;}
+.registration-network-center {position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);text-align:center;color:var(--accent-text);}
+.registration-network-center strong {font:500 28px var(--mono);}
+.registration-network-center>span {display:block;font:6px var(--mono);letter-spacing:.8px;margin-top:5px;color:var(--subtle);}
+.registration-network-nodes {list-style:none;margin:0;padding:0;}
+.registration-role-node {position:absolute;left:var(--node-x);top:var(--node-y);transform:translate(-50%,-50%);width:130px;text-align:center;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);}
+.registration-node-dot {display:block;height:5px;width:5px;border-radius:50%;border:1px solid var(--subtle);margin:0 auto 5px;}
+.registration-node-name {font-size:10px;line-height:1.5;color:var(--muted);}
+.registration-role-node small {display:block;font-size:9px;color:var(--accent-text);margin-top:3px;}
+.registration-role-node.is-current {border-color:var(--brand-line);background:var(--raised);}
+.registration-role-node.is-current .registration-node-dot {background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--brand-tint);}
+.registration-role-node.is-current .registration-node-name {color:var(--paper);}
+.registration-role-list {list-style:none;margin:17px 0 0;padding:0;}
+.registration-role-example {display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);}
+.registration-role-example:last-child {border-bottom:0;}
+.registration-role-example>div:not(.life-portrait) {min-width:0;}
+.registration-example-portrait.life-portrait {height:39px;width:39px;flex:none;border:1px solid var(--line);border-radius:9px;}
+.registration-example-name {display:block;font-size:13px;font-weight:500;color:var(--paper);}
+.registration-example-role {display:block;font-size:10px;line-height:1.7;color:var(--subtle);}
+.registration-example-trait {margin-left:auto;font-size:10px;white-space:nowrap;color:var(--muted);}
+.registration-page .source-note {margin-top:20px;}
+.registration-page.story-enter .registration-profile,.registration-page.story-enter .registration-stat {animation:profile-arrives .5s ease-out both;animation-delay:var(--stat-delay,0ms);}
+.registration-page.story-enter .registration-track>i {animation:profile-stat-arrives .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--stat-delay,0ms);}
+@keyframes profile-arrives {from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes profile-stat-arrives {from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes profile-orbit {to{transform:rotate(360deg)}}
+@media(max-width:1050px) {
+ .registration-page {padding:22px 22px 44px;}
+ .registration-profile,.registration-detail-panel {padding:21px;}
+ .registration-identity {gap:15px;}
+ .registration-portrait-frame {width:100px;height:116px;padding:7px;}
+ .registration-portrait.life-portrait {width:86px;height:86px;}
+ .registration-name {font-size:49px;}
+ .registration-intro {font-size:14px;}
+ .registration-player>span:last-child {display:none;}
+ .registration-footer {align-items:stretch;flex-direction:column;}
+ .registration-footer .btn {width:100%;}
+ .registration-role-node {width:105px;}
+ .registration-world-card {padding:20px;}
+}
+@media(max-width:760px) {
+ .registration-page {padding:18px 16px 38px;}
+ .registration-page-heading {flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:17px;}
+ .registration-page-heading>div>p:last-child {font-size:12px;}
+ .registration-steps {gap:9px;font-size:11px;}
+ .registration-steps small {font-size:10px;}
+ .registration-steps>i {width:18px;}
+ .registration-card {border-radius:13px;}
+ .registration-banner {padding:16px;gap:10px;flex-wrap:wrap;}
+ .registration-brand-mark {width:31px;height:36px;font-size:23px;}
+ .registration-kicker {font-size:6px;letter-spacing:.9px;}
+ .registration-document-title {font-size:17px;}
+ .registration-record {width:100%;display:flex;justify-content:space-between;font-size:8px;border-top:1px solid var(--line);padding-top:10px;margin-top:3px;text-align:left;}
+ .registration-record small {display:inline;font-size:8px;margin:0;}
+ .registration-layout {display:flex;flex-direction:column;}
+ .registration-profile {border-right:0;border-bottom:1px solid var(--line);padding:20px;}
+ .registration-profile-top {margin-bottom:20px;}
+ .registration-identity {gap:16px;margin-bottom:20px;}
+ .registration-portrait-frame {width:107px;height:123px;padding:8px;}
+ .registration-portrait.life-portrait {width:91px;height:91px;}
+ .registration-name {font-size:49px;margin:8px 0;}
+ .registration-role {font-size:12px;}
+ .registration-identity .eyebrow {font-size:6px;letter-spacing:.8px;}
+ .registration-intro {font-size:14px;margin-bottom:20px;}
+ .registration-facts {gap:6px;margin-bottom:20px;}
+ .registration-facts>div {padding:11px 8px;}
+ .registration-facts dt {font-size:9px;}
+ .registration-facts dd {font-size:12px;}
+ .registration-player {padding-top:16px;}
+ .registration-player>span:last-child {display:block;font-size:8px;}
+ .registration-detail-panel {padding:20px;gap:17px;}
+ .registration-section-heading h2 {font-size:21px;}
+ .registration-section-heading>p:last-child {font-size:12px;}
+ .registration-stats {gap:8px;}
+ .registration-stat {padding:12px;}
+ .registration-stat-heading h3 {font-size:10px;}
+ .registration-stat-value strong {font-size:28px;}
+ .registration-stat>p {font-size:8px;}
+ .registration-traits {grid-template-columns:1fr;gap:8px;}
+ .registration-traits article {padding:13px;}
+ .registration-footer {gap:12px;padding-top:16px;}
+ .registration-footer .btn {font-size:15px;min-height:50px;}
+ .registration-simulation-note {flex-direction:column;align-items:flex-start;gap:5px;padding:13px 20px;}
+ .registration-simulation-note>p {font-size:9px;}
+ .registration-world {grid-template-columns:1fr;gap:14px;margin-top:14px;}
+ .registration-world-card {padding:20px;}
+ .registration-world-card .registration-section-heading h2 {font-size:19px;}
+ .registration-network {height:300px;}
+ .registration-role-node {width:92px;padding:8px 5px;}
+ .registration-node-name {font-size:9px;}
+ .registration-role-node small {font-size:8px;}
+ .registration-network-center strong {font-size:22px;}
+ .registration-network-center>span {font-size:5px;letter-spacing:.2px;}
+ .registration-role-example {gap:10px;}
+ .registration-example-trait {font-size:9px;}
+}
+@media(max-width:380px) {
+ .registration-page {padding:16px 12px 32px;}
+ .registration-page .eyebrow {font-size:8px;letter-spacing:1px;}
+ .registration-page-heading>div>p:last-child {font-size:11px;}
+ .registration-profile,.registration-detail-panel,.registration-world-card {padding:16px;}
+ .registration-identity {gap:12px;}
+ .registration-portrait-frame {width:88px;height:104px;padding:6px;}
+ .registration-portrait.life-portrait {width:76px;height:76px;}
+ .registration-identity .eyebrow {font-size:5px;letter-spacing:.5px;}
+ .registration-name {font-size:42px;letter-spacing:-1.5px;}
+ .registration-player>span:last-child {display:none;}
+ .registration-stat {padding:10px;}
+ .registration-stat-heading>span {display:none;}
+ .registration-node-name {font-size:8px;}
+ .registration-role-node {width:82px;}
+ .registration-role-example {display:grid;grid-template-columns:39px minmax(0,1fr);column-gap:10px;row-gap:3px;}
+ .registration-example-portrait {grid-row:span 2;}
+ .registration-example-trait {grid-column:2;margin:0;white-space:normal;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .registration-page *, .registration-page *::before,.registration-page *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}
+
+/* Keep the current profile design with legible, in-flow role cards. */
+.registration-world-card .registration-network { height: auto; margin: 24px 0 0; }
+.registration-world-card .registration-role-node { position: static; transform: none; width: auto; height: auto; text-align: left; }
+.registration-role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; list-style: none; margin: 0; padding: 0; }
+.registration-role-node { min-width: 0; padding: 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.registration-node-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px 12px; min-height: 25px; margin-bottom: 14px; }
+.registration-node-index { color: var(--subtle); font-family: var(--mono); font-size: 11px; line-height: 1.8; }
+.registration-current-label { display: inline-flex; align-items: center; gap: 7px; color: var(--accent-text); font-size: 12px; line-height: 1.8; }
+.registration-current-label::before { content: ''; width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--accent); }
+.registration-node-name { color: var(--muted); font-family: var(--body); font-size: 14px; font-weight: 400; line-height: 1.6; margin: 5px 0 0; overflow-wrap: anywhere; }
+.registration-node-person { color: var(--paper); font:500 25px/1.3 var(--serif); margin: 0; }
+.registration-node-trait { display:flex; flex-wrap:wrap; gap:8px; color:var(--paper); font-size:13px; line-height:1.8; margin:18px 0 0; padding-top:12px; border-top:1px solid var(--line); }
+.registration-node-trait>span { color:var(--subtle); }
+.registration-role-node.is-current { border-color: var(--accent-text); border-top: 3px solid var(--accent); padding-top: 18px; background: var(--raised); }
+
+/* One roster combines identity and role without repeating five alternatives. */
+.registration-node-identity { display:flex; align-items:center; gap:14px; }
+.registration-node-identity>div:last-child { min-width:0; }
+.registration-node-portrait.life-portrait { width:62px; height:62px; flex:none; margin:0; border:1px solid var(--line); border-radius:12px; }
+.registration-roster-note { color:var(--subtle); font-size:12px; line-height:1.8; margin:18px 0 0; }
+@media(max-width:1000px) { .registration-role-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) {
+ .registration-role-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+ .registration-role-node { padding:18px; }
+ .registration-role-node.is-current { padding-top:16px; }
+ .registration-node-portrait.life-portrait { width:52px; height:52px; }
+ .registration-node-person { font-size:23px; }
+ .registration-roster-note { font-size:11px; }
+}
